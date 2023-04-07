@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+nav img {
+    width: 100px;
+    aspect-ratio: 1/1;
+}
+
+.nav__buttons {
+    align-self: center;
+}
+
+.nav__buttons ul {
+    display: flex;
+    gap: 24px;
+}
+
+.nav__buttons ul li {
+    font-size: 24px;
+}
