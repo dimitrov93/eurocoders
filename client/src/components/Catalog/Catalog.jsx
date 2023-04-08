@@ -26,6 +26,11 @@ const Catalog = () => {
     });
   }
   
+  const handleCommentAdded = () => {
+    getallPicturesDateDesc().then((res) => {
+      setImages(res);
+    })
+  }
 
   const indexOfLastPicture = (currentPage + 1) * picturesPerPage;
   const indexOfFirstPicture = indexOfLastPicture - picturesPerPage;
@@ -36,12 +41,14 @@ const Catalog = () => {
     setCurrentPage(selectedPage);
   };
 
+
+
   return (
     <div className="container">
       <h1 className="center">Всички снимки</h1>
 
       <div className="album">
-        <CardItem data={currentPictures} onDelete={handleDelete} />
+        <CardItem data={currentPictures} onDelete={handleDelete} onCommentAdded={handleCommentAdded} />
       </div>
       <ReactPaginate
         pageCount={Math.ceil(images.length / picturesPerPage)}

@@ -7,6 +7,10 @@ const commentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  email: {
+    type: String,
+    required: true,
+  },
   content: {
     type: String,
     required: true,
@@ -33,6 +37,10 @@ const pictureSchema = new mongoose.Schema({
 });
 
 pictureSchema.pre("save", async function (next) {
+  if (!this.isNew) {
+    return next();
+  }
+
   const authorId = this.author;
   const count = await this.constructor.countDocuments({ author: authorId });
 

@@ -9,6 +9,7 @@ import Add from "./components/Card/Add/Add";
 import Catalog from "./components/Catalog/Catalog";
 import Users from "./components/Users/Users";
 import Contacts from "./components/Contact/Contacts";
+import LogginGuard from "./common/logginGuard";
 
 function App() {
   return (
@@ -19,10 +20,13 @@ function App() {
         <Route path="/users" element={<Users />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/logout" element={<Logout />}></Route>
-        <Route path="/add" element={<Add />}></Route>
         <Route path="/catalog" element={<Catalog />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>
+
+          <Route path="/add" element={<Add />}></Route>
+        <Route element={<LogginGuard />}>
+          <Route path="/logout" element={<Logout />}></Route>
+        </Route>
       </Routes>
     </AuthProvider>
   );
