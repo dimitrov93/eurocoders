@@ -6,7 +6,6 @@ import { useAuthContext } from "../../context/AuthContext";
 
 const Nav = () => {
   const { user } = useAuthContext();
-  console.log(user);
   return (
     <nav>
       <Link to={"/"}>
@@ -19,7 +18,7 @@ const Nav = () => {
             <Link to={"/"}>Начало</Link>
           </li>
           <li>
-            <Link to="/pictures">Снимки</Link>
+            <Link to="/catalog">Снимки</Link>
           </li>
           <li>
             <Link to="/users">Потребители</Link>
@@ -28,9 +27,14 @@ const Nav = () => {
             <Link to="/contacts">Контакти</Link>
           </li>
           {user.email ? (
-            <li>
-              <Link to="/logout">logout</Link>
-            </li>
+            <>
+              <li>
+                <Link to="/add">Качи Снимка</Link>
+              </li>
+              <li className="logout__btn">
+                <Link to="/logout">Изход</Link>
+              </li>
+            </>
           ) : (
             <>
               <li>

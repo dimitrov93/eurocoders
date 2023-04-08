@@ -1,0 +1,26 @@
+.album__btn {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.active__btn {
+    background-color: 1px solid transparent;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: white;
+    align-self: center;
+}
+
+.active__btn.delete {
+    background-color: red;
+}
+
+.active__btn.edit {
+    background-color: rgb(194, 227, 145);
+}
+
+.active__btn:hover {
+    cursor: pointer;
+}

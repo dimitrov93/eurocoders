@@ -15,9 +15,16 @@ nav img {
 
 .nav__buttons ul {
     display: flex;
-    gap: 24px;
 }
 
 .nav__buttons ul li {
     font-size: 24px;
+    padding: 1rem;
+
+}
+
+.logout__btn {
+    padding: 1rem;
+    margin-left: 1rem;
+    border-left: 1px solid black;
 }

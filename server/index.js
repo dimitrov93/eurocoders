@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const { dbInit } = require('./config/initDb');
 
 const authRoute = require('./routes/auth')
+const pictureRoute = require('./routes/pictureRoute')
 
 app.use((req, res, next) => {
     console.log(`METHOD: ${req.method} >> PATH: ${req.path}`);
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 
 app.use('/api/auth', authRoute)
+app.use('/api/pictures', pictureRoute)
 
 dbInit()
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

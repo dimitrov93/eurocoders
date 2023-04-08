@@ -19,11 +19,10 @@ const Login = () => {
       axios.post(`${BASE_URL}/api/auth/login`, {email,password})
       .then(res => {
           userLogin(res.data)
-          console.log(res.data);
             navigate('/')
          })
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
     return (

@@ -1,0 +1,32 @@
+/* PAGINATION */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .pagination:not(.active) {
+    cursor: pointer;
+  }
+  .pagination .active {
+    color: #007bff;
+  }
+  
+  .previous,
+  .next {
+    border: none;
+    cursor: pointer;
+  }
+  
+  .previous:hover,
+  .next:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .disabled {
+    color: #ccc;
+    cursor: not-allowed;
+  }

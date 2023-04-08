@@ -1,8 +1,11 @@
 .album {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    gap: 24px;
+    gap: 1.1rem;
+}
+
+.album__section {
+    width: 250px;
 }
 
 .album img {
