@@ -5,6 +5,7 @@ import { useAuthContext } from '../context/AuthContext';
 const PrivateGuard = ({children}) => {
     const { isAuthenticated } = useAuthContext();
 
+    console.log(isAuthenticated);
     if (!isAuthenticated) {
         return <Navigate to="/login" replace />
     }

@@ -2,12 +2,10 @@ import React from "react";
 import { useAuthContext } from "../../../context/AuthContext";
 import "./carditem.css";
 import { deletePicture } from "../../../services/pictureService";
-import { useRef } from "react";
 import { addComment } from "../../../services/commentService";
 
 const CardItem = ({ data, onDelete, onCommentAdded  }) => {
   const { user } = useAuthContext();
-  const commentRef = useRef()
 
   const onDeleteHandler = (e, id) => {
     e.preventDefault();

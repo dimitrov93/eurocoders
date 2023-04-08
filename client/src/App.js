@@ -23,8 +23,8 @@ function App() {
         <Route path="/catalog" element={<Catalog />}></Route>
         <Route path="/contacts" element={<Contacts />}></Route>
 
-          <Route path="/add" element={<Add />}></Route>
         <Route element={<LogginGuard />}>
+          <Route path="/add" element={<Add />}></Route>
           <Route path="/logout" element={<Logout />}></Route>
         </Route>
       </Routes>
