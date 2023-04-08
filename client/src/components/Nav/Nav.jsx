@@ -37,7 +37,7 @@ const Nav = () => {
             </>
           ) : (
             <>
-              <li>
+              <li className="reg__btn">
                 <Link to="/register">Регистрация</Link>
               </li>
               <li>

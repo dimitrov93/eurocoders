@@ -8,6 +8,7 @@ import Logout from "./components/Logout/Logout";
 import Add from "./components/Card/Add/Add";
 import Catalog from "./components/Catalog/Catalog";
 import Users from "./components/Users/Users";
+import Contacts from "./components/Contact/Contacts";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/logout" element={<Logout />}></Route>
         <Route path="/add" element={<Add />}></Route>
         <Route path="/catalog" element={<Catalog />}></Route>
+        <Route path="/contacts" element={<Contacts />}></Route>
       </Routes>
     </AuthProvider>
   );

@@ -23,8 +23,16 @@ nav img {
 
 }
 
+.nav__buttons ul li:Hover {
+    color: RGB(152, 180, 212);
+}
+
+.reg__btn,
+.logout__btn {
+    border-left: 1px solid black;
+}
+
 .logout__btn {
     padding: 1rem;
     margin-left: 1rem;
-    border-left: 1px solid black;
 }

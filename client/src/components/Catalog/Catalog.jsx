@@ -38,7 +38,7 @@ const Catalog = () => {
 
   return (
     <div className="container">
-      <h1>Всички снимки</h1>
+      <h1 className="center">Всички снимки</h1>
 
       <div className="album">
         <CardItem data={currentPictures} onDelete={handleDelete} />

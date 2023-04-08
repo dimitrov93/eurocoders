@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuthContext } from "../../../context/AuthContext";
 import "./carditem.css";
-import { Link } from "react-router-dom";
-import { BASE_URL } from "../../../utils/apiConfig";
+
 import { deletePicture } from "../../../services/pictureService";
 
 const CardItem = ({ data, onDelete  }) => {
   const { user } = useAuthContext();
-  const [isImageDeleted, setIsImageDeleted] = useState(false);
 
   const onDeleteHandler = (e, id) => {
     e.preventDefault();

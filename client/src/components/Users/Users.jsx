@@ -18,7 +18,7 @@ const Users = () => {
 
   return (
     <div className="container">
-      <h1 className="center">Всички снимки</h1>
+      <h1 className="center">Потребители и техните снимки</h1>
 
       {picturesByAuthor &&
         picturesByAuthor.map((x) => {

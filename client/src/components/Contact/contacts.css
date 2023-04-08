@@ -1,0 +1,244 @@
+
+.max_height {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contacts__container {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 40px;
+    overflow: hidden;
+    max-width: 100%;
+    height: 600px;
+    box-shadow: 0 5px 10px rgb(0, 0, 0,0.2);
+
+
+}
+.contacts__img {
+    width: 30%;
+    aspect-ratio: 1/1;
+    background-image: url('../../assets/contacts.jpg');
+    background-size: cover;
+    background-position: center ;
+}
+
+.contacts__information,
+.contacts__email  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contacts__information {
+    font-size: 24px;
+    width: 40%;
+    margin: 20px;
+}
+
+.contacts__information_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts__separator {
+    border-right: 0.5px solid black;
+    height: 400px;
+    margin: 10px;
+    align-self: center;
+}
+
+.contacts__email {
+    padding: 40px;
+    max-width: 100%;
+}
+
+.contacts__email input,
+.contacts__email textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #f4f3ef;
+    border-radius: 6px;
+    padding: 0 15px;
+    resize: none;
+    margin-top: 10px;
+}
+
+.contacts__email input::placeholder,
+.contacts__email textarea::placeholder {
+    font-size: 16px;
+}
+
+.contacts__email textarea {
+    line-height: 1.5;
+  }
+  
+.contacts__email .email__btn {
+    width: 100%;
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    padding: 6px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    background: rgb(16, 14, 14);
+    cursor: pointer;
+    transition: var(--trans);
+    margin-top: 10px;
+
+}
+
+.contacts__email .email__btn:hover {
+    background: rgb(123, 117, 117);
+}
+
+.instagram {
+    color: #fff;
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.contacts__icons {
+    font-size: 28px;
+    color: black;
+}
+.message {
+    color: #fd5949;
+}
+
+
+@media only screen and (max-width: 1440px) { 
+    .contacts__container { 
+        height: 500px;
+    }
+
+    .contacts__information {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .contacts__header {
+        font-size: 4.5rem;
+    }
+    .contacts__container { 
+        height: 400px;
+    }
+
+    .contacts__separator {
+        height: 300px;
+    }
+    .contacts__email {
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+
+    .contacts__header {
+        font-size: 4rem;
+    }
+
+    .contacts__img {
+        display: none;
+    }
+    .contacts__container { 
+        height: 500px;
+    }
+
+    .contacts__information {
+        font-size: 16px;
+    }
+    
+    .contacts__separator {
+        display: none;
+    }
+
+    .contacts__information {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contacts__header {
+        font-size: 3rem;
+    }
+
+    .contacts__container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contacts__container { 
+        height: 800px;
+    }
+
+    .contacts__information {
+        font-size: 24px;
+    }
+
+ 
+    .contacts__email div:nth-child(4) {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .contacts__header {
+        font-size: 2rem;
+    }
+    .contacts__information {
+        margin: 0;
+        position: relative;
+        top: 10px;
+        font-size: 22px;
+        width: 100%;
+    }
+    .contacts__container { 
+        height: auto;
+    }
+}
+
+@media (max-width: 576px) { 
+    .contacts__information {
+        gap: 5px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .contacts__header {
+        font-size: 1.5rem;
+    }
+    .contacts__information {
+        font-size: 20px;
+    }
+
+    .contacts__information {
+        margin: 0;
+        position: relative;
+        top: 30px;
+        font-size: 16px;
+    }
+
+    .contacts__information, .contacts__email {
+        gap: 1rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    .contacts__information {
+        font-size: 8px;
+        flex-direction: row;
+    }
+
+}

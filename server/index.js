@@ -7,6 +7,7 @@ const { dbInit } = require('./config/initDb');
 
 const authRoute = require('./routes/auth')
 const pictureRoute = require('./routes/pictureRoute')
+const emailRoute = require('./routes/emailRoute')
 
 app.use((req, res, next) => {
     console.log(`METHOD: ${req.method} >> PATH: ${req.path}`);
@@ -20,6 +21,7 @@ app.use(cookieParser());
 
 app.use('/api/auth', authRoute)
 app.use('/api/pictures', pictureRoute)
+app.use('/api/email', emailRoute)
 
 dbInit()
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`))

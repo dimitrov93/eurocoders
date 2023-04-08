@@ -19,7 +19,7 @@ const Home = () => {
   }, [])
   return (
     <div className="container">
-      <h1>Последните 10 снимки качени</h1>
+      <h1 className="center">Последните 10 снимки качени</h1>
 
       <div className="album">
         <CardItem data={images} />
