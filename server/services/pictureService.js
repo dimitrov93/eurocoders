@@ -1,10 +1,8 @@
 const Picture = require("../models/Picture");
 
-exports.getAll = () => Picture.find().populate('author');
-
-
+exports.getById = (id) => Picture.findById(id).populate('author')
+exports.getAll = () => Picture.find().populate("author");
 exports.create = (author, url) => Picture.create({ author, url });
-
 exports.delete = async (pictureId, userId) => {
   const picture = await Picture.findOne({ _id: pictureId, userId });
 
@@ -15,10 +13,10 @@ exports.delete = async (pictureId, userId) => {
 };
 
 exports.getAllPicturesPerUser = async () => {
-    const pictures = await Picture.find()
-    .sort({createdAt: -1})
+  const pictures = await Picture.find()
+    .sort({ createdAt: -1 })
     .populate("author", "email")
-    .exec()
+    .exec();
 
   const picturesByAuthor = pictures.reduce((acc, cur) => {
     const authorName = cur.author.email;
@@ -35,14 +33,9 @@ exports.getAllPicturesPerUser = async () => {
       author,
       pictures: pictures.sort((a, b) => b.createdAt - a.createdAt),
     }));
-
   return sortedPicturesByAuthor;
-
-
-    
-}
+};
 
 exports.getForUser = async (userId) => {
-    return await Picture.find({ userId }).sort({ createdAt: -1 })
-  }
-  
+  return await Picture.find({ userId }).sort({ createdAt: -1 });
+};

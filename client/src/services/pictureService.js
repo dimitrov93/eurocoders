@@ -1,9 +1,20 @@
 import axios from 'axios';
 import { BASE_URL } from '../utils/apiConfig';
 
+export const getById = async (id) => {
+  const picture = await axios.get(`${BASE_URL}/api/pictures/${id}`);
+  return picture;
+}
+
 export const getAllPicsPerUser = async () => {
     const pictures = await axios.get(`${BASE_URL}/api/pictures/pics`);
     return pictures;
+}
+
+export const getLastFivePictures = async () => {
+  const pictures = await axios.get(`${BASE_URL}/api/pictures/`);
+  const lastFivePictures = pictures.data.slice(-5);
+  return lastFivePictures;
 }
 
 

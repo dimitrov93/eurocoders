@@ -1,10 +1,23 @@
 const router = require('express').Router();
 const pictureService = require('../services/pictureService')
 
+// All
 router.get('/', async (req, res) => {
   try {
     const pictures = await pictureService.getAll();
     res.status(200).json(pictures);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({message: 'Server Error'});
+  }
+});
+
+// By id
+router.get('/:id', async (req, res) => {
+  try {
+    const picture = await pictureService.getById(req.params.id);
+    console.log(picture);
+    res.status(200).json(picture);
   } catch (error) {
     console.error(error);
     res.status(500).json({message: 'Server Error'});
@@ -41,14 +54,5 @@ router.delete('/:pictureId', async (req, res) => {
   }
 })
 
-router.get('/user/:userId', async (req, res) => {
-  try {
-    const pictures = await pictureService.getForUser(req.params.userId)
-    res.json({ pictures })
-  } catch (err) {
-    console.log(err)
-    res.status(500).json({ message: 'Error getting pictures' })
-  }
-})
 
 module.exports = router

@@ -28,11 +28,11 @@ const Nav = () => {
           </li>
           {user.email ? (
             <>
-              <li>
-                <Link to="/add">Качи Снимка</Link>
-              </li>
               <li className="logout__btn">
                 <Link to="/logout">Изход</Link>
+              </li>
+              <li >
+                <Link to="/profile">Профил</Link>
               </li>
             </>
           ) : (

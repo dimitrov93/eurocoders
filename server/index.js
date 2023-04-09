@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const { dbInit } = require('./config/initDb');
 
 const authRoute = require('./routes/auth')
+const usersRoute = require('./routes/usersRoute')
 const pictureRoute = require('./routes/pictureRoute')
 const emailRoute = require('./routes/emailRoute')
 const commentRoute = require('./routes/commentRoute')
@@ -20,6 +21,7 @@ app.use(express.json())
 app.use(cookieParser());
 
 
+app.use('/api/users', usersRoute)
 app.use('/api/auth', authRoute)
 app.use('/api/pictures', pictureRoute)
 app.use('/api/email', emailRoute)

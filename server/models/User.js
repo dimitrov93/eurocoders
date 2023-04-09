@@ -3,6 +3,12 @@ const bcrypt = require('bcrypt')
 const {SALT_ROUNDS} = require('../config/env');
 
 const userSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        minLength: 3,
+        required: [true, 'User is required!'],
+        unique: true,
+    },
     email: {
         type: String,
         minLength: 5,
@@ -14,6 +20,10 @@ const userSchema = new mongoose.Schema({
         minLength: 4,
         required: true,
     },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    }
 }, {timestamps:true});
 
 userSchema.pre('save', function(next) {

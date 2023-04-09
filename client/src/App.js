@@ -10,6 +10,9 @@ import Catalog from "./components/Catalog/Catalog";
 import Users from "./components/Users/Users";
 import Contacts from "./components/Contact/Contacts";
 import LogginGuard from "./common/logginGuard";
+import Profile from "./components/Profile/Profile";
+import Edit from "./components/Profile/Edit.jsx/Edit";
+import Detail from "./components/Card/Detail/Detail";
 
 function App() {
   return (
@@ -26,8 +29,12 @@ function App() {
         <Route element={<LogginGuard />}>
           <Route path="/add" element={<Add />}></Route>
           <Route path="/logout" element={<Logout />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/profile/:id" element={<Edit />}></Route>
+          <Route path="/pictures/:id" element={<Detail />}></Route>
         </Route>
       </Routes>
+
     </AuthProvider>
   );
 }

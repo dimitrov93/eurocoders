@@ -3,6 +3,8 @@ import { useAuthContext } from "../../../context/AuthContext";
 import "./carditem.css";
 import { deletePicture } from "../../../services/pictureService";
 import { addComment } from "../../../services/commentService";
+import { BASE_URL } from "../../../utils/apiConfig";
+import { Link } from "react-router-dom";
 
 const CardItem = ({ data, onDelete, onCommentAdded  }) => {
   const { user } = useAuthContext();
@@ -47,19 +49,21 @@ const CardItem = ({ data, onDelete, onCommentAdded  }) => {
               <h5>Id: {x._id} </h5>
               <h5>Author: {x.author.email}</h5>
               <h5>Date: {new Date(x.createdAt).toLocaleString()}</h5>
+              <Link to={`${BASE_URL}/api/pictures/${x._id}`}>
               <img src={x.url} alt="" />
+              </Link>
               <div className="album__btn">
                 {x.author._id === user._id ? (
                   <>
-                    <button className="active__btn edit">Edit</button>
-                    {/* <Link to={`${BASE_URL}/api/pictures/`}> */}
+                    <Link to={`/pictures/${x._id}`}>
+                    <button className="active__btn edit">Details</button>
+                    </Link>
                     <span
                       className="active__btn delete"
                       onClick={(e) => onDeleteHandler(e, x._id)}
                     >
                       Delete
                     </span>
-                    {/* </Link> */}
                   </>
                 ) : (
                   ""
